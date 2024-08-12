@@ -14,7 +14,7 @@ const Login = ({ onLogin }) => {
         }
 
         try {
-            const response = await axios.post('/api/login', { username, password });
+            const response = await axios.post('https://flashcard-backend-ivory.vercel.app/api/login', { username, password });
             const { token } = response.data;
             localStorage.setItem('token', token);
             onLogin(token);

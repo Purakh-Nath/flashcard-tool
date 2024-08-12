@@ -14,7 +14,7 @@ const Signup = () => {
         }
 
         try {
-            await axios.post('/api/register', { username, password });
+            await axios.post('https://flashcard-backend-ivory.vercel.app/api/register', { username, password });
             alert('User registered successfully');
             navigate('/dashboard'); // Redirect to the dashboard after successful signup
         } catch (error) {

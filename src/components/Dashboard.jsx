@@ -23,7 +23,7 @@ const Dashboard = ({ token }) => {
             }
 
             const response = await axios.put(
-                `/api/flashcards/${selectedCard.id}`,
+                `https://flashcard-backend-ivory.vercel.app/api/flashcards/${selectedCard.id}`,
                 { question, answer },
                 {
                     headers: { Authorization: `Bearer ${token}` }
@@ -59,7 +59,7 @@ const Dashboard = ({ token }) => {
             }
 
             const response = await axios.post(
-                '/api/flashcards',
+                'https://flashcard-backend-ivory.vercel.app/api/flashcards',
                 { question, answer },
                 {
                     headers: {
@@ -92,7 +92,7 @@ const Dashboard = ({ token }) => {
             alert('Please log in to delete flashcards');
             return;
         }
-        axios.delete(`/api/flashcards/${id}`, {
+        axios.delete(`https://flashcard-backend-ivory.vercel.app/api/flashcards/${id}`, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(() => {
@@ -113,7 +113,7 @@ const Dashboard = ({ token }) => {
         if (!token) {
             navigate('/login');
         } else {
-            axios.get('/api/flashcards', {
+            axios.get('https://flashcard-backend-ivory.vercel.app/api/flashcards', {
                 headers: { Authorization: `Bearer ${token}` }
             })
                 .then(response => setFlashcards(response.data))

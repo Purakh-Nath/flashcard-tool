@@ -16,7 +16,7 @@ const List = () => {
                     return;
                 }
         
-                const response = await axios.get('/api/flashcards', {
+                const response = await axios.get('https://flashcard-backend-ivory.vercel.app/api/flashcards', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
